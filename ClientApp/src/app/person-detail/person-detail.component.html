@@ -1,0 +1,18 @@
+<div class="m-3">
+  <button routerLink="" class="btn btn-outline-secondary">go back</button>
+
+  <div *ngIf="person">
+    <h3>{{person.fName}} {{person.lName}}</h3>
+    <div class="media">
+      <span class="media-left">
+        <img src="https://image.shutterstock.com/image-photo/close-portrait-smiling-handsome-man-260nw-1011569245.jpg" width=200 height=200>
+      </span>
+      <div class="media-body ml-2">
+        <div><span class="font-weight-bold">ID:</span> {{person.id}}</div>
+        <div><span class="font-weight-bold">Address:</span> {{person.address}}</div>
+        <div><span class="font-weight-bold">Age:</span> {{person.age}}</div>
+        <div><span class="font-weight-bold">Interests:</span> {{person.interests}}</div>
+      </div>
+    </div>
+  </div>
+</div>
