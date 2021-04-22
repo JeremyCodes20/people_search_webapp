@@ -1,5 +1,15 @@
 <body>
-  <div class="container">
+  <div class="container m-3">
+    <div class="container bg-dark text-white page-header  p-3">
+      <span><h1>{{title}}</h1>
+        <input type="button"
+        id="createperson"
+        value="Create Person"
+        routerLink="/createperson"
+        class="btn btn-dark"
+        ></span>
+    </div>
+    <hr>
     <router-outlet></router-outlet>
   </div>
 </body>

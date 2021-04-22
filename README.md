@@ -25,3 +25,13 @@ Technical Requirements:
 * Use an ORM framework to talk to the database  
 
 * Unit Tests for appropriate parts of the application   
+
+### Instructions:
+
+Using the .NET CLI, run the following instructions:
+
+```$ dotnet build```
+
+```$ dotnet run```
+
+Then, navigate to [localhost:5001]{https://localhost:5001/}
