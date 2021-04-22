@@ -46,8 +46,9 @@ namespace people_search_webapp.Controllers
         public async Task<ActionResult<IEnumerable<Person>>> GetPersonsOfName(String name)
         {
             var query = from person in _context.Persons
-                        where person.FName.ToLower().Contains(name.ToLower())
-                        || person.LName.ToLower().Contains(name.ToLower())
+                            //where person.FName.ToLower().Contains(name.ToLower())
+                            //|| person.LName.ToLower().Contains(name.ToLower())
+                        where string.Concat(person.FName, person.LName).ToLower().Contains(name.ToLower().Replace(" ", ""))
                         select person;
 
             return await query.ToListAsync();
