@@ -34,4 +34,4 @@ Using the .NET CLI, run the following instructions:
 
 ```$ dotnet run```
 
-Then, navigate to [localhost:5001]{https://localhost:5001/}
+Then, navigate to [localhost:5001](https://localhost:5001/)
