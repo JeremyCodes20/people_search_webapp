@@ -9,6 +9,16 @@ young.a.jeremy@gmail.com
 This is my submission for the Technical Challenge in my application for the
 Software Developer Internship position at Health Catalyst.
 
+### Instructions:
+
+Using the .NET CLI, run the following instructions:
+
+```$ dotnet build```
+
+```$ dotnet run```
+
+Then, navigate to [localhost:5001](https://localhost:5001/)
+
 #### The People Search Application
 Business Requirements:
 
@@ -26,12 +36,11 @@ Technical Requirements:
 
 * Unit Tests for appropriate parts of the application   
 
-### Instructions:
+This application uses Angular and WebApi. EntityFramework was chosen as the ORM.
 
-Using the .NET CLI, run the following instructions:
+Each time the application is run, three Persons are seeded into the database. 
+New Persons can additionally be created via a form accessed from the home page.
 
-```$ dotnet build```
-
-```$ dotnet run```
-
-Then, navigate to [localhost:5001](https://localhost:5001/)
+After entering a query, the user is presented with a list of matching results. 
+Clicking on any result will take the user to a page including all details about the 
+person.
