@@ -11,8 +11,10 @@ Search
 </div>
 
 <div class="align-items-center">
-  <div *ngIf="waiting; else results" class="d-flex justify-content-center p-30">
-    <div class="loader">
+  <div *ngIf="waiting; else results" class="d-flex justify-content-center">
+    <div class="spinner-grow" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
   </div>
 </div>
 
