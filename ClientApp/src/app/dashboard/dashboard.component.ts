@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   }
 
   search(): void {
+    this.people = [];
     this.waiting = true;
 
     // simulate slow response
