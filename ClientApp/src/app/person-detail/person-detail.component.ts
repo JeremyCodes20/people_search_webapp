@@ -13,6 +13,7 @@ import { PersonService } from '../person.service';
 })
 export class PersonDetailComponent implements OnInit {
   person: Person;
+  deleted: boolean = false;
 
   constructor(
     @Inject(forwardRef(() => PersonService)) private personService: PersonService,
@@ -26,6 +27,12 @@ export class PersonDetailComponent implements OnInit {
   getPerson(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.personService.getPerson(id)
-      .subscribe(person => this.person = person);
+      .subscribe(person =>  this.person = person );
+  }
+
+  deletePerson(): void {
+    this.personService.deletePerson(this.person.id).subscribe();
+    this.deleted = true;
+    this.person = null;
   }
 }

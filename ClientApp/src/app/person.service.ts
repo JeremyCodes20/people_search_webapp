@@ -31,4 +31,8 @@ export class PersonService {
   
     return this.http.post<Person>(this.PEOPLE_API, person);
   }
+
+  deletePerson(id: number): Observable<{}> {
+    return this.http.delete(`${this.PEOPLE_API}/${id}`);
+  }
 }
