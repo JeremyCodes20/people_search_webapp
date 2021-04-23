@@ -18,6 +18,44 @@ namespace people_search_webapp.Controllers
         public PeopleController(PersonContext context)
         {
             _context = context;
+
+            SeedDatabase();
+        }
+
+        // Seed database with example Persons
+        public void SeedDatabase()
+        {
+            if (!_context.Persons.Any())
+            {
+                Person[] people = new Person[]
+                {
+                    new Person(FName:"John",
+                                LName:"Doe",
+                                Address:"243 N. 253 E.",
+                                Age: 23,
+                                Interests: "Paddleboarding, Surfing"),
+                    new Person(FName:"Jacob",
+                                LName:"Smith",
+                                Address:"353 S. 132 W.",
+                                Age: 30,
+                                Interests: "Programming, Baseball"),
+                    new Person(FName:"Dane",
+                                LName:"Littlefield",
+                                Address:"234 N. 432 E.",
+                                Age: 25,
+                                Interests: "Volleyball, Crocheting"),
+                };
+
+                foreach (Person person in people)
+                {
+                    _context.Persons.Add(person);
+                    _context.SaveChangesAsync();
+                }
+            }
+            //_context.Persons.Add(person);
+            //await _context.SaveChangesAsync();
+
+            //return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
         // GET: api/People

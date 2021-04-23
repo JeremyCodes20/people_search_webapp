@@ -11,13 +11,14 @@ import { PersonService } from '../person.service';
 })
 export class DashboardComponent implements OnInit {
   @Input() query: string = "";
-  people: Person[] = [];
+  people: Person[];
   waiting: boolean = false;
 
   constructor(
     @Inject(forwardRef(() => PersonService)) private personService: PersonService) { }
 
   ngOnInit(): void {
+    this.search();
   }
 
   search(): void {

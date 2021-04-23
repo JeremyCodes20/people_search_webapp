@@ -1,7 +1,7 @@
 <div class=m-3>
 <input type=search id=psearch name=psearch [(ngModel)]=query
   placeholder="Search by name (leave blank for all)"
-  class="form-control mb-1"
+  class="form-control mb-2"
   (keyup.enter)="search()">
 <button (click)="search()"
   class="btn btn-success"
@@ -11,19 +11,28 @@ Search
 </div>
 
 <div class="align-items-center">
-  <div *ngIf="waiting; else elseBlock" class="loader"></div>
+  <div *ngIf="waiting; else results" class="d-flex justify-content-center p-30">
+    <div class="loader">
+  </div>
 </div>
 
-<ng-template #elseBlock>
-  <ul class="list-group m-3">
-    <li *ngFor="let person of people"
-    class="list-group-item list-group-item-action
-    d-flex justify-content-between align-items-center
-    m-1
-    bg-light"
-    routerLink="/detail/{{person.id}}">
-      <span class="border border-dark"><img src="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/pictures/picture-38061-1459177084.jpg" width=100 height=100></span>
-      {{person.fName}} {{person.lName}}
-    </li>
-  </ul>
+<ng-template #results>
+  <div *ngIf="people.length; else noMatch">
+    <ul class="list-group m-3">
+      <li *ngFor="let person of people"
+          class="list-group-item list-group-item-action
+      d-flex justify-content-between align-items-center
+      m-1
+      bg-light"
+          routerLink="/detail/{{person.id}}">
+        <span class="border border-dark"><img src="https://wordstream-files-prod.s3.amazonaws.com/s3fs-public/pictures/picture-38061-1459177084.jpg" width=100 height=100></span>
+        {{person.fName}} {{person.lName}}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noMatch>
+    <div class="text-center">
+      No match found
+    </div>
+  </ng-template>
 </ng-template>
