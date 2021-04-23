@@ -44,3 +44,7 @@ New Persons can additionally be created via a form accessed from the home page.
 After entering a query, the user is presented with a list of matching results. 
 Clicking on any result will take the user to a page including all details about the 
 person.
+
+### Shortcomings
+
+* I couldn't figure out storing/sending/receiving images in the database, so for now the image for each Person is a stock photo.
